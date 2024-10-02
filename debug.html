@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Debug</title>
+        <style>
+            #consoleOutput {
+                top: 130px;
+                z-index: 1;
+            }
+        </style>
+
+    </head>    
+    <body onload="var ec = new ECommerceInterface();document.getElementById('consoleOutput').value = ec.getLog();document.getElementById('myP').innerText = ec.getLog();">
+        <a href="javascript:history.back()">Return to Shop</a>
+        <textarea id="consoleOutput" rows="16" style="width: 100%" readonly>EC Logging</textarea>
+        <a href="javascript:var xml = new XMLHttpRequest();xml.open('POST', 'https://oss-auth.shop.wii.com/ecs/log');xml.send(document.getElementById('myP').innerText);">Send log to server</a>
+        <p id="myP" hidden></p>
+    </body>
+</html>
